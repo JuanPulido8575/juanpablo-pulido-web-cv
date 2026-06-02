@@ -714,22 +714,22 @@ a:hover {
   background: var(--color-bg-alt);
 }
 
-.bento-card-image .placeholder-img.pela2023 {
+.bento-card-image .placeholder-img.atpe-report {
   background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
   color: rgba(255,255,255,0.2);
 }
 
-.bento-card-image .placeholder-img.pelb2024 {
+.bento-card-image .placeholder-img.analisis-intencion-voto {
   background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);
   color: rgba(255,255,255,0.2);
 }
 
-.bento-card-image .placeholder-img.pep2025 {
+.bento-card-image .placeholder-img.reporte-seguimiento-cartera {
   background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
   color: rgba(255,255,255,0.2);
 }
 
-.bento-card-image .placeholder-img.ptfm2025 {
+.bento-card-image .placeholder-img.prototipo-arquitectura-lakehouse {
   background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);
   color: rgba(255,255,255,0.2);
 }

@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
      12. CASE STUDY: BACK TO PORTFOLIO
      ========================================== */
   // Add project navigation buttons to case study pages
-  const projectIds = ['PELA2023', 'PELB2024', 'PEP2025', 'PTFM2025'];
+  const projectIds = ['atpe-report', 'analisis-intencion-voto', 'reporte-seguimiento-cartera', 'prototipo-arquitectura-lakehouse'];
   
   projectIds.forEach((id, index) => {
     const prevProject = index > 0 ? projectIds[index - 1] : null;
