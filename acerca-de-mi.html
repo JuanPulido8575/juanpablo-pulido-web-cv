@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acerca de Juan Pablo Pulido González — Historia académica y laboral">
+  <meta name="theme-color" content="#1A1A2E">
+  <title>Acerca de mí | Juan Pablo Pulido</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== ABOUT HERO ===== */
+    .about-hero {
+      position: relative;
+      padding: 120px 24px 80px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0A0E17 0%, #1A237E 50%, #0A0E17 100%);
+      color: #fff;
+    }
+    .about-hero-content {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .about-hero-photo {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(0,229,255,0.3);
+      box-shadow: 0 0 40px rgba(0,229,255,0.15);
+      flex-shrink: 0;
+    }
+    .about-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-hero-text h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .about-hero-text h1 span {
+      background: linear-gradient(135deg, #00E5FF, #69F0FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-hero-text .tagline {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+    .about-hero-text .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+    .about-hero-text .breadcrumb a {
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .about-hero-text .breadcrumb a:hover {
+      color: #00E5FF;
+    }
+
+    /* ===== ABOUT CONTENT ===== */
+    .about-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+    .about-content p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #374151;
+      margin-bottom: 20px;
+    }
+    .about-content h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: inherit;
+      margin: 48px 0 16px;
+      letter-spacing: -0.02em;
+    }
+    .about-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: inherit;
+      margin: 32px 0 12px;
+    }
+    .about-content ul {
+      margin: 16px 0 24px;
+      padding-left: 24px;
+    }
+    .about-content ul li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+      margin-bottom: 8px;
+      position: relative;
+      list-style: none;
+      padding-left: 20px;
+    }
+    .about-content ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #374151;
+      font-weight: 700;
+    }
+    .about-content ul ul {
+      margin: 8px 0 12px 20px;
+    }
+    .about-content ul ul li {
+      font-size: 0.95rem;
+    }
+    .about-content ul ul li::before {
+      content: '•';
+      color: #374151;
+    }
+    .about-content strong {
+      font-weight: 700;
+    }
+    .about-content .highlight-box p {
+      margin-bottom: 0;
+      color: inherit;
+      font-weight: 700;
+    }
+    .about-content .highlight-box {
+      background: #F0F7FF;
+      border-left: 4px solid #00897B;
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+    }
+    .about-content .highlight-box p {
+      margin-bottom: 0;
+      color: #1A237E;
+      font-weight: 500;
+    }
+    .about-content .semester-block {
+      background: #F8F9FB;
+      border: 1px solid #E8E8F0;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .about-content .semester-block h3 {
+      margin-top: 0;
+    }
+    .about-content .semester-block .course {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #E8E8F0;
+    }
+    .about-content .semester-block .course:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .about-content .semester-block .course-name {
+      font-weight: 700;
+      color: inherit;
+      margin-bottom: 4px;
+    }
+    .about-content .semester-block .course-detail {
+      font-size: 0.92rem;
+      color: #5A5A7A;
+      line-height: 1.6;
+    }
+    .about-content .semester-block .course-detail strong {
+      color: #374151;
+    }
+    @media (max-width: 768px) {
+      .about-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 24px;
+      }
+      .about-hero-photo {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+      .about-hero-text h1 {
+        font-size: 1.75rem;
+      }
+      .about-hero-text .tagline {
+        margin: 0 auto;
+      }
+      .about-hero-text .breadcrumb {
+        justify-content: center;
+      }
+      .about-content {
+        padding: 40px 20px 60px;
+      }
+      .about-content p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" role="status" aria-label="Cargando">
+    <div class="loading-logo">JP</div>
+    <div class="loading-bar">
+      <div class="loading-bar-fill"></div>
+    </div>
+    <p class="loading-text">Cargando...</p>
+  </div>
+
+  <!-- ============ TOP NAV ============ -->
+  <nav class="case-top-nav" role="navigation" aria-label="Navegación">
+    <div class="case-top-nav-inner">
+      <a href="index.html" class="back-link">← Volver al portafolio</a>
+      <span class="project-name">Acerca de mí</span>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="about-hero">
+    <div class="about-hero-content">
+      <div class="about-hero-photo">
+        <img src="images/Perfil/fotografia_4x3_unir.png" alt="Juan Pablo Pulido González" loading="lazy" />
+      </div>
+      <div class="about-hero-text">
+        <div class="breadcrumb">
+          <a href="index.html">Inicio</a>
+          <span>/</span>
+          <span>Acerca de mí</span>
+        </div>
+        <h1>Acerca de <span>mí</span></h1>
+        <p class="tagline">
+          Analista y científico de datos, con formación en física. 
+          Mi trayectoria combina el rigor de la física con la potencia del análisis 
+          de datos para transformar información en decisiones estratégicas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENIDO COMPLETO ============ -->
+  <article class="about-content">
+
+    <p>
+      En la semana del 24 al 28 de abril de 2023, me gradué del programa de 
+      física de la Universidad del Quindío. Después de celebrada la graduación, en este 
+      periodo de transición, inició la búsqueda de becas y universidades donde realizaría 
+      mis estudios de posgrado. Me interesaba y todavía hoy en día, el estudio de sistemas 
+      cuánticos que resultasen útiles, idealmente revolucionarios, en el campo de la 
+      computación cuántica.
+    </p>
+
+    <p>
+      Al mismo tiempo, buscaba trabajo como profesor de física y también como analista 
+      de datos Junior para reunir el dinero que pensaba sería fundamental para viajar al 
+      país extranjero donde estudiaría mi posgrado. Aunque resulte inesperado y a primera 
+      vista disociado de la física, la carrera de física te prepara de forma integral y 
+      moldea tu cerebro para desarrollar una habilidad crucial: <strong>resolver problemas</strong>, 
+      competencia indispensable en el mundo de la gestión de datos.
+    </p>
+
+    <p>
+      Perfectamente, un físico puede aprovechar su habilidad matemática, razonamiento, 
+      intuición y conocimientos de los que se sirve para modelar y entender la naturaleza, 
+      para enfrentar problemas complejos fuera del ámbito de la física. En específico, el 
+      conocimiento adquirido en las asignaturas básicas de un físico (mecánica, 
+      electromagnetismo, ondas, termodinámica, mecánica cuántica, …) que me enseñaron 
+      a modelar una gran porción de los fenómenos de la naturaleza, junto con el 
+      pensamiento estadístico desarrollado gracias a las asignaturas de mecánica 
+      estadística, estadística, y series de tiempo, el pensamiento matemático adquirido 
+      a través de las asignaturas matemáticas fundamentales, geometría analítica, álgebra 
+      lineal, cálculo diferencial, cálculo integral, cálculo vectorial, y matemáticas 
+      especiales, y el pensamiento lógico y algorítmico desarrollado a través de las 
+      asignaturas Programación I, Programación II, métodos numéricos y trabajo de fin de 
+      grado, donde aprendí a programar a través de los lenguajes C, Matlab, y Python, 
+      me otorgaron los conocimientos básicos y habilidades técnicas para desempeñarme y 
+      avanzar de forma autónoma como analista de datos Junior.
+    </p>
+
+    <p>
+      El gusto por la obtención de conocimiento de valor a partir de los datos viene 
+      precisamente del gusto común con la física: desentrañar patrones o reglas comunes 
+      que rigen la dinámica de los fenómenos del mundo.
+    </p>
+
+    <h2>El camino hacia los datos</h2>
+
+    <p>
+      El resultado de la búsqueda de becas y trabajo fue exitoso porque el 12 de octubre 
+      de 2023, una de las universidades donde apliqué (Universidad de Antofagasta en 
+      Chile), me aceptó para realizar estudios de doctorado en el programa de Doctorado 
+      en Física Mención en Física Matemática que comenzaría el 01 de abril de 2024. 
+      Así mismo, el 4 de noviembre de 2023, una empresa o centro de llamadas de difusión 
+      electoral y análisis de intención de voto, que requería de personas con aptitudes 
+      para transformación, modelamiento, análisis, y visualización de datos, se interesó 
+      en mi perfil, me contactaron y sometieron a una prueba de conocimientos técnicos 
+      que aprobé satisfactoriamente.
+    </p>
+
+    <p>
+      Gracias a ello conseguí entrar a la empresa y el primer gran reto que enfrenté 
+      consistió en extraer, integrar/consolidar, transformar, cargar, modelar, y visualizar 
+      un conjunto de datos estructurados resultantes de la celebración de las elecciones 
+      de congreso en el estado de Texas, USA en los años 2020, 2022 y 2024, asociados 
+      a más de 17 millones de votantes. El proceso de extracción, búsqueda de datos 
+      faltantes (a partir de técnicas de Web Scraping la mayoría de las veces) y limpieza 
+      se realizó en Python, mientras que la integración/consolidación, transformación, 
+      carga, modelamiento y creación de cuadro de mando explorativo para análisis de 
+      intención de voto y descarga de datos, se llevó a cabo en la herramienta de 
+      visualización de datos no programática Power BI.
+    </p>
+
+    <p>
+      En aquel momento no conocía Power BI y empecé a conocer, entender, y aprender 
+      sobre la herramienta en los primeros meses de trabajo. Proyectos posteriores se 
+      basaron en ejecutar el mismo proceso sobre los datos de votantes recolectados y 
+      los resultados reportados por los agentes del centro de llamadas luego de finalizar 
+      cada llamada lanzada sobre un votante determinado.
+    </p>
+
+    <p>
+      Antes de iniciar el doctorado, aproveché para tomar cursos de SQL porque sabía 
+      que es una habilidad esencial para profesionales de datos y empecé a profundizar 
+      mis conocimientos en Python para mejorar las posibilidades de mi trabajo como 
+      analista de datos. Por ejemplo, aprendí a realizar Web Scraping como mecanismo 
+      de recolección de datos a través de fuentes indirectas. Hasta el comienzo del 
+      doctorado, me mantuve trabajando con datos y estudiando sobre datos.
+    </p>
+
+    <h2>El doctorado y la decisión de cambiar de rumbo</h2>
+
+    <p>
+      El inicio del doctorado que se desarrolló en modalidad online no sucedió como 
+      esperaba por razones intrínsecas a mí principalmente y la universidad. Por ello 
+      lo abandoné y decidí sumergirme de lleno en el mundo de los datos. Las razones 
+      intrínsecas y externas que motivaron mi cambio de camino se listan a continuación:
+    </p>
+
+    <h3>Razones intrínsecas</h3>
+    <ul>
+      <li>El doctorado supuso una gran dificultad para mí (tal vez no conseguí una metodología de estudio adecuada teniendo en cuenta la carga laboral).</li>
+      <li>En la cohorte del 2024, fui el único estudiante postulado a la Universidad, por lo que no tenía compañeros de estudio para discutir especialmente detalles finos de las asignaturas vistas y consolidar conocimientos. En mi caso, es fundamental intercambiar el conocimiento aprendido con compañeros para progresar en la adquisición de conocimientos sólidos.</li>
+    </ul>
+
+    <h3>Razones externas</h3>
+    <ul>
+      <li>Mi postulación a la universidad se vio en gran parte motivada por la existencia de la línea de investigación de óptica y computación cuánticas. Con el inicio del doctorado, me informaron que el profesor encargado de dicha línea se había marchado de la Universidad y que en consecuencia debía adaptarme a una segunda opción de línea para hacer mis estudios. Naturalmente, este cambio de último momento me causó desmotivación.</li>
+    </ul>
+
+    <p>
+      Exactamente, escribí y envié mi carta de renuncia el 17 de junio de 2024 
+      (2 meses y 16 días después del inicio del doctorado). Me encontraba sin estudios 
+      pero sabía claramente que quería sumergirme en el mundo de los datos. Desde aquel 
+      momento sabía que dedicarme únicamente a trabajar estancaría mis conocimientos y 
+      mi exploración del mundo de los datos resultaría superficial.
+    </p>
+
+    <h2>La maestría en Visual Analytics &amp; Big Data</h2>
+
+    <p>
+      Actuando en consecuencia, empecé a buscar programas de maestría de ciencia de datos 
+      integrales que además de abordar los cimientos teóricos y conocimientos de frontera 
+      en el estado del arte del mundo de los datos, integrara un enfoque práctico que 
+      permitiese aplicar los conocimientos adquiridos en el papel en un contexto del 
+      mundo real. Una gran porción de los programas encontrados estaban diseñados en 
+      modalidad online y los beneficios que suponían frente a la modalidad presencial 
+      tradicional, me hicieron decantar por inscribirme en modalidad virtual.
+    </p>
+
+    <p>
+      Un factor de peso de la decisión fue tener la posibilidad de ver las clases en 
+      diferido o verlas de nuevo para entender conceptos que me causaran dificultad. 
+      Esta posibilidad, además me resultaba de gran utilidad para abordar satisfactoriamente 
+      cargas de trabajo académicas y laborales. Quería también una universidad de alto 
+      rendimiento académico con sello de calidad europeo a la vanguardia de los 
+      conocimientos de frontera en datos.
+    </p>
+
+    <p>
+      Con las heurísticas mencionadas y una cuidadosa búsqueda de programas académicos, 
+      encontré al programa Visual Analytics and Big Data con especialización en 
+      inteligencia artificial de la Universidad Internacional de la Rioja (UNIR) de 
+      España, que encajaba en su totalidad con los criterios de búsqueda que había 
+      impuesto. En especial, atrajo mi atención e interés el término Big Data porque 
+      conocía la importancia de entender y saber cómo gestionar grandes cantidades de 
+      datos que se generan a un flujo acelerado y presentan tipologías variables, para 
+      obtener conocimiento de valor en la toma de decisiones.
+    </p>
+
+    <p>
+      Realicé mi inscripción y el 10 de julio de 2024 mi ingreso a UNIR fue aprobado. 
+      Exactamente el 17 de julio de 2024 me fueron enviadas las credenciales de acceso 
+      al campus virtual de la Universidad donde pude realizar un curso de programación 
+      en Python. Hasta el comienzo del programa de maestría el lunes 4 de noviembre 
+      de 2024, de forma autodidacta empecé a explorar cargas de trabajo de mayor 
+      complejidad a través del entrenamiento de modelos de Machine Learning para 
+      predecir respuestas de votantes. El gran punto de inflexión en mi curva de 
+      aprendizaje tuvo lugar en el inicio de la maestría.
+    </p>
+
+    <h2>Formación académica en la maestría</h2>
+    <p>A continuación se lista por semestre las asignaturas vistas junto a las herramientas de software y lenguajes o expresiones de código aprendidas en cada una:</p>
+
+    <div class="semester-block">
+      <h3>SEMESTRE I</h3>
+
+      <div class="course">
+        <div class="course-name">Bases de datos no estructuradas para el Big Data (No SQL)</div>
+        <div class="course-detail"><strong>Herramientas vistas:</strong> MongoDB, Cassandra, Redis, Neo4J</div>
+        <div class="course-detail"><strong>Lenguajes de consulta:</strong> MQL (Mongo Query Language), CQL (Cassandra Query Language), Cypher (similar a SQL para grafos).</div>
+        <div class="course-detail">Rápido bosquejo sobre los recursos de proveedores Cloud y su utilidad.</div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Ingeniería para el procesado masivo de datos</div>
+        <div class="course-detail"><strong>Herramientas vistas:</strong> HDFS, Apache Spark, Apache Kafka, Hive, Impala, BigQuery</div>
+        <div class="course-detail"><strong>Lenguajes o expresiones de código vistos:</strong> Línea de comandos para gestionar sistemas de ficheros distribuidos de Hadoop, PySpark.</div>
+        <div class="course-detail">Bosquejo sobre los recursos de proveedores Cloud y su utilidad.</div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Técnicas de inteligencia artificial</div>
+        <div class="course-detail">Uso de Jupyter Notebooks para ejecutar tareas de Machine Learning en Python.</div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Análisis e interpretación de datos</div>
+        <div class="course-detail">Fortalecimiento y desarrollo de conocimientos estadísticos. Uso de Python para análisis de datos.</div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Visualización interactiva de la información</div>
+        <div class="course-detail"><strong>Herramientas vistas:</strong> Power BI, Tableau, y Scimago Graphica</div>
+        <div class="course-detail"><strong>Conocimientos adquiridos:</strong> Psicología aplicada al diseño de visualizaciones, diseño aplicado a la visualización de datos, codificación gráfica de datos, visualización estática y visualización dinámica e interactiva.</div>
+      </div>
+    </div>
+
+    <div class="semester-block">
+      <h3>SEMESTRE II</h3>
+
+      <div class="course">
+        <div class="course-name">Gobierno del dato y toma de decisiones</div>
+        <div class="course-detail"><strong>Herramientas vistas:</strong> Dremio, Power BI, ARX (Herramienta de anonimización de datos)</div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Herramientas de visualización de datos</div>
+        <div class="course-detail"><strong>Herramientas vistas:</strong> D3 (Herramienta programática de alto nivel para la creación de visualizaciones desde 0), Power BI y Tableau.</div>
+        <div class="course-detail"><strong>Lenguajes:</strong> Puesto que D3 es una librería de JavaScript, aprendí a usar JavaScript junto a código HTML y CSS para la creación de visualizaciones interactivas.</div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Prácticas académicas externas</div>
+        <div class="course-detail">Realicé mis prácticas con la empresa de Scoring y análisis de riesgo crediticio <strong>LiSim</strong>.</div>
+        <div class="course-detail"><strong>Proyecto realizado:</strong> Creación de cuadro de mando integral (CMI) en Power BI para dar seguimiento al comportamiento de cartera, a los modelos de scoring y a las estrategias de recuperación de cartera.</div>
+        <div class="course-detail">Los datos suministrados para la elaboración del dashboard ya se encontraban en una fase curada, por lo que solamente fue cuestión de modelarlos en Power BI a través de un modelo en estrella, transformarlos a través de la generación de columnas derivadas, cargarlos y crear el cuadro de mando. Al finalizar la construcción del reporte, ofrecí una capacitación al equipo BI de la empresa explicando la interacción con el reporte construido y preparé un breve tutorial para explicar la carga de datos en Power BI, el proceso de transformación y preparación, el modelamiento de los datos y la creación de visualizaciones dispuestas en un tablero de control. Además ofrecí una capacitación sobre licencias en Power BI.</div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Trabajo de Fin de Máster</div>
+        <div class="course-detail">Implementé de forma local una prueba de concepto PoC de una moderna arquitectura Lakehouse como sustituto a los sistemas de Data Warehouse tradicionales con capacidades integradas de transaccionalidad OLAP y OLTP y soporte para ejecución simplificada de cargas de trabajo BI y BA en una única plataforma o sobre una única capa de almacenamiento (generalmente en un Data Lake). Se implementó en un caso de uso relativamente simple para la generación automática de cuadros de mando de tiempo real en Power BI y el entrenamiento de modelos de Machine Learning para el ajuste de funciones de estimación de probabilidad de contestación que permitieran la creación de estrategias de marcado que maximicen dicha probabilidad.</div>
+        <div class="course-detail">Utilicé el sistema de ficheros local como capa de almacenamiento (idealmente un almacén de objetos en la nube como GCS, ADLSGen 2 o Amazon S3), Apache Kafka como tecnología de transmisión de mensajes en tiempo real, Spark y Dremio Sonar como motores de ejecución, Dremio Artic como catálogo de metadatos y el formato Delta como formato de tabla transaccional.</div>
+      </div>
+    </div>
+
+    <div class="semester-block">
+      <h3>ASIGNATURAS DE LA ESPECIALIZACIÓN</h3>
+
+      <div class="course">
+        <div class="course-name">Redes neuronales y Deep Learning</div>
+        <div class="course-detail"><strong>Lenguaje utilizado:</strong> Python</div>
+        <div class="course-detail"><strong>Frameworks:</strong> Keras, Tensorflow</div>
+        <div class="course-detail" style="margin-top:8px;"><strong>Tipos de redes neuronales vistas:</strong></div>
+        <div class="course-detail">• <strong>Fully Layer Connected o Multilayer Perceptron (MLP)</strong> — Casos de uso: clasificación automatizada de dígitos del 0-9 escritos a mano a través de un clasificador Softmax.</div>
+        <div class="course-detail">• <strong>Redes neuronales convolucionales (CNN)</strong> — Casos de uso: Entrenamiento de CNNs para el reconocimiento de objetos usando el dataset CIFAR-10.</div>
+        <div class="course-detail">• <strong>Redes neuronales recurrentes (RNNs) Vanilla, LSTM y GRU</strong> — Casos de uso: Entrenamiento de redes neuronales recurrentes para reconocer automatizadamente el nivel de odio en mensajes de redes sociales. Este es un problema de análisis de sentimientos en una oración o texto.</div>
+        <div class="course-detail" style="margin-top:8px;"><strong>Otras arquitecturas vistas:</strong></div>
+        <div class="course-detail">• Redes GANs</div>
+        <div class="course-detail">• Aprendizaje por refuerzo</div>
+      </div>
+    </div>
+
+    <h2>Características personales</h2>
+    <ul>
+      <li>Enfrento los problemas con dedicación y disciplina. El principio "divide y conquistarás", la atención al detalle y un entendimiento sólido de los fundamentos teóricos del conocimiento que quiero y/o necesito adquirir, son elementos imprescindibles en mi día a día como ser humano y profesional.</li>
+      <li>Me desenvuelvo acertadamente cuando trabajo en equipo aportando ideas oportunas que pueden guiar la resolución de problemas.</li>
+      <li>Capacidad de adaptación a nuevos retos procurando estar a la vanguardia de los conocimientos de mi área.</li>
+      <li>Búsqueda de soluciones modernas que se mantengan en el tiempo en la mayor medida posible.</li>
+    </ul>
+
+    <h2>El cierre de un ciclo</h2>
+
+    <p>
+      El trabajo en la empresa de difusión electoral y análisis de intención de voto 
+      finalizó en Marzo de 2026. He aquí la razón del retiro: Estaba experimentando una 
+      fase de estancamiento que estaba limitando las posibilidades de mis conocimientos. 
+      La metodología de trabajo de la empresa se estaba quedando obsoleta, y las 
+      capacidades económicas y recursos tecnológicos no eran suficientes para prestar un 
+      servicio de calidad. Específicamente, la encuestadora no estaba logrando muestras 
+      de votantes representativas que contestaran las preguntas de sondeo electoral. La 
+      inversión adicional para disminuir el margen de error era muy grande y la empresa 
+      no tenía los recursos para cubrirla.
+    </p>
+
+    <h2>ANEXOS: HERRAMIENTAS ACTUALES</h2>
+
+    <p>
+      Actualmente como analista y científico de datos, y como no puede ser de otra forma, 
+      he añadido a mi bagaje de herramientas, capacidades de IA para eficientar y 
+      automatizar la ejecución de cargas de trabajo. Por ejemplo, a través del protocolo 
+      MCP para Power BI y Jupyter Notebook, puedo pedirle a cualquier LLM como Claude 
+      que se acople a la herramienta de trabajo y me ayude a limpiar datos, crear medidas, 
+      crear visualizaciones avanzadas con código HTML para mejorar mi capacidad de 
+      Storytelling con datos, o usando herramientas agénticas para crear scripts, hacer 
+      scraping, facilitar la creación de código para entrenamiento y selección automática 
+      de modelos de Machine Learning para llevar a cabo análisis predictivos y prescriptivos 
+      e incluso orquestando agentes de IA para delegar trabajos con intervención humana 
+      por supuesto.
+    </p>
+
+  </article>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner fade-in">
+      <a href="index.html" class="nav-logo" style="font-size:1.5rem; color:var(--color-text);">JP<span>.</span></a>
+      <p style="font-size:0.9rem; color:var(--color-text-muted);">
+        <a href="index.html" style="color:var(--color-accent);">← Volver al portafolio</a>
+      </p>
+      <p class="footer-text">&copy; 2025 Juan Pablo Pulido González</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

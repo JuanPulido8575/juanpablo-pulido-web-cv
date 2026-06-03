@@ -670,12 +670,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s;
             overflow: hidden;
         }
         .timeline-item:hover .timeline-logo {
             transform: scale(1.08);
-            box-shadow: 0 0 0 2px #00E5FF;
         }
         .timeline-logo img {
             width: 100%;
@@ -1239,6 +1238,7 @@
                     <a href="#tech-stack">Stack Tecnológico</a>
                     <a href="#experience">Experiencia</a>
                     <a href="#portfolio">Portafolio</a>
+                    <a href="#about">Acerca de mí</a>
                     <!-- mobile-only actions -->
                     <div class="mobile-only" style="display:flex;flex-direction:column;gap:12px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.08);">
                         <button class="nav-icon-btn" id="langToggleMobile" aria-label="Cambiar idioma" style="display:flex;gap:8px;color:rgba(255,255,255,0.7);padding:8px 0;justify-content:flex-start;">
@@ -1616,6 +1616,136 @@
         </div>
     </section>
 
+    <!-- ===== ACERCA DE MÍ ===== -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="about-split fade-up">
+                <div class="about-image">
+                    <div class="about-image-frame">
+                        <img src="images/Perfil/fotografia_4x3_unir.png" alt="Juan Pablo Pulido González" loading="lazy" />
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-label">Sobre mí</span>
+                    <h2 class="section-title" style="text-align:left;">Acerca de mi trayectoria<br/>profesional y laboral</h2>
+                    <p class="about-summary">
+                        Físico graduado de la Universidad del Quindío, mi trayectoria ha sido todo 
+                        menos convencional. Desde el estudio de sistemas cuánticos hasta el análisis de más de 
+                        17 millones de registros electorales, he recorrido un camino que me llevó a 
+                        sumergirme de lleno en el mundo de los datos. 
+                    </p>
+                    <p class="about-summary">
+                        Hoy soy <strong>analista y científico de datos</strong> con una maestría en Visual Analytics 
+                        &amp; Big Data por la UNIR (España). He trabajado con empresas como 
+                        <strong>ThePoliticalGroup</strong> (análisis de intención de voto) y 
+                        <strong>LiSim International SAS</strong> (scoring crediticio y recuperación de cartera), 
+                        donde combiné mi pensamiento analítico con herramientas como Python, SQL, Power BI, 
+                        Apache Spark y Kafka para transformar datos en decisiones estratégicas.
+                    </p>
+                    <p class="about-summary">
+                        Creo firmemente en el poder de los datos para contar historias y guiar decisiones. 
+                        Mi formación en física me enseñó a modelar fenómenos complejos; mi trabajo en datos 
+                        me permite aplicar esa misma rigurosidad a problemas de negocio.
+                    </p>
+                    <div class="about-cta">
+                        <a href="acerca-de-mi.html" class="btn btn-primary">
+                            Leer historia completa →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            background: #fff;
+        }
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .about-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about-image-frame {
+            width: 100%;
+            max-width: 360px;
+        }
+        .about-image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .about-text .section-label {
+            margin-bottom: 4px;
+        }
+        .about-text .section-title {
+            margin-bottom: 4px;
+        }
+        .about-summary {
+            font-size: 1.02rem;
+            line-height: 1.8;
+            color: #5A5A7A;
+            margin: 0;
+        }
+        .about-summary strong {
+            font-weight: 700;
+        }
+        .about-text .section-title {
+            color: inherit;
+            font-weight: 800;
+        }
+        .about-cta {
+            margin-top: 12px;
+        }
+        .about-cta .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .about-cta .btn-primary {
+            background: #00897B;
+            color: #fff;
+        }
+        .about-cta .btn-primary:hover {
+            background: #00695C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,137,123,0.35);
+        }
+        @media (max-width: 900px) {
+            .about-split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .about-image {
+                order: -1;
+            }
+            .about-image-frame {
+                max-width: 260px;
+            }
+            .about-text .section-title {
+                text-align: center !important;
+            }
+            .about-cta {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+    </style>
+
     <!-- ===== CONTACT ===== -->
     <section class="section contact-bg" id="contact">
         <div class="container contact-inner">
@@ -1729,8 +1859,7 @@
             const roles = [
                 'Data Scientist',
                 'Data Analyst',
-                'BI Developer',
-                'Data Engineer'
+                'BI Developer'
             ];
             let roleIndex = 0;
             let charIndex = 0;

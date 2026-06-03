@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const roles = [
       'Data Scientist',
       'Data Analyst',
-      'BI Developer',
-      'Data Engineer'
+      'BI Developer'
     ];
     let roleIndex = 0;
     let charIndex = 0;
@@ -311,8 +310,67 @@ document.addEventListener('DOMContentLoaded', () => {
      14. PRELOAD IMAGES ON PAGE LOAD
      ========================================== */
   window.addEventListener('load', () => {
-    // Any post-load tasks can go here
     document.body.classList.add('loaded');
+  });
+
+  /* ==========================================
+     15. LIGHTBOX — CLICK TO ENLARGE IMAGES
+     ========================================== */
+  // Build lightbox DOM once
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox-overlay';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-label', 'Imagen ampliada');
+  lightbox.innerHTML = `
+    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <div class="lightbox-image-wrapper">
+      <img src="" alt="" />
+      <div class="lightbox-caption"></div>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('img');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+  const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+  function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Attach click handlers to all gallery images
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    const img = item.querySelector('img');
+    const captionEl = item.querySelector('.gallery-item-text');
+    if (!img) return;
+
+    // Make the whole gallery-item clickable
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', (e) => {
+      // Don't open if clicking a link inside
+      if (e.target.closest('a')) return;
+      openLightbox(img.src, captionEl ? captionEl.textContent : '');
+    });
+  });
+
+  // Close handlers
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
+    }
   });
 
 });
